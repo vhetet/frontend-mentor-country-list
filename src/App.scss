@@ -11,15 +11,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 1rem;
     background-color: $white;
-    border-bottom: 1px black solid;
+    box-shadow: 0 0 0.1875rem 0 $dark-gray;
   }
 
   .search,
   .filter,
   .card {
     margin: 1rem;
-    box-shadow: 0 0 2px 0 $dark-gray;
+    box-shadow: 0 0 0.125rem 0 $dark-gray;
     background-color: $white;
     border-radius: 0.25rem;
   }
@@ -63,7 +64,7 @@
       height: 100%;
       width: 100%;
     }
-    
+
     .card-details {
       padding: 1rem;
 
