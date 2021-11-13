@@ -1,6 +1,6 @@
 import "./App.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faMoon, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
@@ -14,11 +14,11 @@ function App() {
       </div>
       <div className="search">
         <FontAwesomeIcon icon={faSearch} />
-        <input type="text" placeholder="Search for a country" />
+        <input type="text" placeholder="Search for a country... " />
       </div>
       <div className="filter">
         <input type="button" value="Filter by Region" />
-        {/* <input type="button">Filter by Region</input> */}
+        <FontAwesomeIcon icon={faChevronDown} />
       </div>
       <div className="country-list">
         <div className="card">
