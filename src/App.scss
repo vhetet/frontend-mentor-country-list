@@ -1,4 +1,4 @@
-@import './index.scss';
+@import "./index.scss";
 
 .App {
   display: flex;
@@ -8,36 +8,36 @@
   background-color: $very-light-gray;
 
   .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: $white;
-      border-bottom: 1px black solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    border-bottom: 1px black solid;
   }
 
   .search,
   .filter,
   .card {
-      margin: 1rem;
-      box-shadow: 0 0 2px 0 $dark-gray;
-      background-color: $white;
-      border-radius: .25rem;
+    margin: 1rem;
+    box-shadow: 0 0 2px 0 $dark-gray;
+    background-color: $white;
+    border-radius: 0.25rem;
   }
 
   .search,
   .filter {
-      padding: .5rem;
+    padding: 0.5rem;
   }
 
   .search {
-      svg {
-          margin: 0 1rem;
-      }
+    svg {
+      margin: 0 1rem;
+    }
 
-      input {
-          width: 80%;
-          border: 0;
-      }
+    input {
+      width: 80%;
+      border: 0;
+    }
   }
 
   .filter {
@@ -48,33 +48,36 @@
     justify-content: space-between;
 
     input {
-        border: 0;
-        background-color: unset;
+      border: 0;
+      background-color: unset;
     }
   }
 
   .card {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      margin: 1rem 3rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 1rem 3rem;
 
-      .flag {
-        background-color: purple;
-        border-radius: .25rem .25rem 0 0;
+    img {
+      border-radius: 0.25rem 0.25rem 0 0;
+      height: 100%;
+      width: 100%;
+    }
+    
+    .card-details {
+      padding: 1rem;
+
+      p,
+      h3 {
+        margin-block: 0.5rem;
       }
-      .card-details {
-          padding: 1rem;
 
-          p, h3 {
-              margin-block: .5rem;
-          }
-
-          p {
-              font-weight: 600;
-              span {
-                  font-weight: 300;
-              }
-          }
+      p {
+        font-weight: 600;
+        span {
+          font-weight: 300;
+        }
       }
+    }
   }
 }

@@ -1,8 +1,24 @@
 import "./App.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faMoon, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faMoon,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://restcountries.com/v2/all?fields=name,capital,population,region,flag"
+    )
+      .then((resp) => resp.json())
+      .then((resp) => {
+        setCountries(resp);
+      });
+  }, []);
   return (
     <div className="App">
       <div className="header">
@@ -21,15 +37,24 @@ function App() {
         <FontAwesomeIcon icon={faChevronDown} />
       </div>
       <div className="country-list">
-        <div className="card">
-          <div className="flag"></div>
-          <div className="card-details">
-            <h3 className="name">Germany</h3>
-            <p>Population: <span>81,770,900</span></p>
-            <p>Region: <span>Europe</span></p>
-            <p>Capital: <span>Berlin</span></p>
-          </div>
-        </div>
+        {countries.length > 0 &&
+          countries.map((c) => (
+            <div className="card" key={c.name}>
+              <img src={c.flag} alt={c.name} />
+              <div className="card-details">
+                <h3 className="name">{c.name}</h3>
+                <p>
+                  Population: <span>{c.population}</span>
+                </p>
+                <p>
+                  Region: <span>{c.region}</span>
+                </p>
+                <p>
+                  Capital: <span>{c.capital}</span>
+                </p>
+              </div>
+            </div>
+          ))}
       </div>
     </div>
   );
