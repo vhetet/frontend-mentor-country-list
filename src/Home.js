@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./Home.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
