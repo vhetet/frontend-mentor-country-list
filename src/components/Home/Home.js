@@ -6,9 +6,12 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
-function App() {
+function Home() {
   const [countries, setCountries] = useState([]);
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     fetch(
@@ -19,8 +22,9 @@ function App() {
         setCountries(resp);
       });
   }, []);
+
   return (
-    <div className="App">
+    <div className="Home">
       <div className="header">
         <h4>Where in the world?</h4>
         <div className="theme-switch">
@@ -39,7 +43,13 @@ function App() {
       <div className="country-list">
         {countries.length > 0 &&
           countries.map((c) => (
-            <div className="card" key={c.name}>
+            <div
+              className="card"
+              key={c.name}
+              onClick={() => {
+                navigate("/details");
+              }}
+            >
               <img src={c.flag} alt={c.name} />
               <div className="card-details">
                 <h3 className="name">{c.name}</h3>
@@ -60,4 +70,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
