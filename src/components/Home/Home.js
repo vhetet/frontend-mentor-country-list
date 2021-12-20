@@ -2,11 +2,11 @@ import "./Home.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
-  faMoon,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import Header from "../shared/Header/Header";
 
 function Home() {
   const [countries, setCountries] = useState([]);
@@ -25,13 +25,7 @@ function Home() {
 
   return (
     <div className="Home">
-      <div className="header">
-        <h4>Where in the world?</h4>
-        <div className="theme-switch">
-          <FontAwesomeIcon icon={faMoon} />
-          <span>Dark Mode</span>
-        </div>
-      </div>
+      <Header></Header>
       <div className="search">
         <FontAwesomeIcon icon={faSearch} />
         <input type="text" placeholder="Search for a country... " />
